@@ -1,0 +1,17 @@
+import pickle
+import os
+# creo la lista de jugadores
+jugadores_nba = ["Lebron James", "Stephen Curry", "Luka Doncic", "Joel Embid", "Michael Jordan", "Victor Wembanyama"]
+
+# serializar la lista y la guardo en un archivo
+archivo_pickle = "jugadores_nba.pkl"
+with open(archivo_pickle, "wb") as f:
+    pickle.dump(jugadores_nba, f)
+
+# aqui se recupera el archivo y se deserealiza
+with open(archivo_pickle, "rb") as f:
+    jugadores_recuperados = pickle.load(f)
+
+# imprimo la lista de jugadores recuperados y la lista original
+print("Lista original de jugadores:", jugadores_nba)
+print("Lista de jugadores recuperada:", jugadores_recuperados)
